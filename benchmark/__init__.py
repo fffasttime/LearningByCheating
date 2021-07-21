@@ -178,8 +178,7 @@ _aliases = {
             'NoCrashTown02-v1', 'NoCrashTown02-v2',
             ],
         'regular': [
-            'NoCrashTown01-v3', 'NoCrashTown01-v4',
-            'NoCrashTown02-v3', 'NoCrashTown02-v4',
+            'NoCrashTown01-v3', #'NoCrashTown01-v4', 'NoCrashTown02-v3', 'NoCrashTown02-v4',
             ],
         'regular-np': [
             'NoCrashTown01-v3-np', 'NoCrashTown01-v4-np',

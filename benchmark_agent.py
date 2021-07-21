@@ -7,6 +7,7 @@ from benchmark import make_suite, get_suites, ALL_SUITES
 from benchmark.run_benchmark import run_benchmark
 
 import bird_view.utils.bz_utils as bzu
+import g_conf
 
 
 def _agent_factory_hack(model_path, config, autopilot):
@@ -52,7 +53,9 @@ def run(model_path, port, suite, big_cam, seed, autopilot, resume, max_run=10, s
     for suite_name in get_suites(suite):
         tick = time.time()
 
-        benchmark_dir = log_dir / 'benchmark' / model_path.stem / ('%s_seed%d' % (suite_name, seed))
+        expfolder = '%s_seed%d_%.0e' % (suite_name, seed, g_conf.EI_CONV_OUT)
+        benchmark_dir = (log_dir / 'benchmark' / model_path.stem / expfolder)
+
         benchmark_dir.mkdir(parents=True, exist_ok=True)
 
         with make_suite(suite_name, port=port, big_cam=big_cam) as env:
